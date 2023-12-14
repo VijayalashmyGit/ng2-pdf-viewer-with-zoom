@@ -1,0 +1,11 @@
+<h1 class="project_title">Vässa Språket</h1>
+
+<div class="card-container">
+
+  <mat-card *ngFor="let chapter of chapters_model" class="chapter_card" [routerLink]="['chapter/', chapter.chapterNumber]">
+
+    <mat-card-title>{{ chapter.chapterName }}</mat-card-title>
+
+  </mat-card>
+
+</div>

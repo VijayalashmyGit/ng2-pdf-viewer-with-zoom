@@ -1,0 +1,29 @@
+.popup_container {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  margin-left: 2.5vw;
+
+  .canvas_crop {
+    position: relative;
+    overflow: hidden;
+    max-height: 100%;
+  }
+
+  .prev_btn, .next_btn {
+    font-weight: bold;
+    font-size: 1.5vw;
+  }
+
+  .prev_btn {
+    z-index: 1;
+  }
+}
+
+
+
+.mat-mdc-raised-button[disabled] {
+  opacity: 0;
+}

@@ -1,0 +1,12 @@
+.label_select {
+  position: absolute;
+  cursor: pointer;
+  display: block;
+  transform: translateX(-50%);
+}
+
+.canvas_crop {
+  position: absolute;
+  transform: translateX(-50%);
+  border-radius: 4%;
+}

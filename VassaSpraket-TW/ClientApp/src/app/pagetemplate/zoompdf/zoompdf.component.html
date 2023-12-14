@@ -1,0 +1,21 @@
+<mat-dialog-actions>
+  <button mat-icon-button [mat-dialog-close]="true">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-dialog-actions>
+
+<div class="popup_container">
+
+  <button mat-raised-button color="primary" class="prev_btn" [disabled]="currentCanvasCount === 0" (click)="loadprevcanvas()">&lt;</button>
+
+
+  <canvas #cropCanvas class="canvas_crop"></canvas>
+
+
+  <button mat-raised-button color="primary" class="next_btn" [disabled]="currentCanvasCount == totalCanvasCount" (click)="loadnxtcanvas()">&gt;</button>
+</div>
+
+
+
+
+

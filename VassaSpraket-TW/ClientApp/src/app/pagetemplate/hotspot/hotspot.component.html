@@ -1,0 +1,25 @@
+<ng-container *ngIf="filteredData">
+  <ng-container *ngFor="let pos of filteredData; let i = index">
+
+    <canvas #preCanvas class="canvas_crop"
+            [hidden]="!isShowCanvas[i]"
+            [ngStyle]="{'top': pos.labelCanvas_Top + '%',
+            'left': pos.labelCanvas_Left + '%'}">
+    </canvas>
+
+    <label class="label_select"
+           (mouseover)="onMouseOver(i)"
+           (mouseleave)="onMouseLeave()"
+           (click)="openDialog(i)"
+           [ngStyle]="{
+           'top': pos.labelCanvas_Top + '%',
+           'left': pos.labelCanvas_Left + '%',
+           'width': pos.labelCanvas_Width + 'vh',
+           'height': pos.labelCanvas_Height + '%'
+       }">
+    </label>
+
+  </ng-container>
+</ng-container>
+
+

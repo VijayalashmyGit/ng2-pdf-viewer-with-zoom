@@ -1,0 +1,17 @@
+
+<div class="outer_container" *ngIf="model">
+  <button mat-fab matTooltip="Primary" color="primary" class="prev_btn" [hidden]="currentIndex === 1" (click)="loadPrevPage()">
+    <
+  </button>
+  <app-pdfviewer [model]="model" 
+                 [currentIndex]="currentIndex"
+                 [filteredData]="filteredData"
+                 (totalPagesLoaded)="updateTotalPages($event)"
+                 (btnLoaded)="updatebtn($event)"></app-pdfviewer>
+
+  <button mat-fab matTooltip="Primary" color="primary" class="nxt_btn" [hidden]="(currentIndex == totalPages||!isNavBtnShow)" (click)="loadNxtPage()">
+    >
+  </button>
+</div>
+
+<button mat-raised-button color="accent" class="back_btn" routerLink="/">Back</button>

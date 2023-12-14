@@ -1,0 +1,42 @@
+.card-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 50vh;
+  border: 0.3vw dashed #17a2b8;
+  border-radius: 2vw;
+  top: 10vw;
+  position: relative;
+  background-color: #FFFFFF;
+
+  mat-card.chapter_card {
+    background-color: #17a2b8;
+    width: 20vw;
+    text-align: center;
+    margin: 1rem;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    height: 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+  }
+
+  .chapter_card:hover {
+    transform: scale(1.1);
+  }
+
+  mat-card-title {
+    font-size: 2vw;
+  }
+}
+
+
+.project_title {
+  font-size: 4vw;
+  color: red;
+  text-align: center;
+  position: relative;
+  top: 3vw;
+}

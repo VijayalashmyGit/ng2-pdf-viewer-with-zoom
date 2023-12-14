@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+code {
+  color: #e01a76;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #17a2b830;
+}
+
+.pdf-container .ng2-pdf-viewer-container .pdfViewer .page .canvasWrapper {
+  box-shadow: 0 0.1vw 0.85vw -0.25vw grey !important;  
+}
+
+app-hotspot {
+  display: contents;
+}
+
+.custom-border-dialog .mdc-dialog__container {
+  border: 5px solid #17a2b8;
+}
+
+.mdc-dialog__actions {
+  float: right;
+  padding: 0 !important;
+}
+
+.mdc-dialog__content {
+  max-height: 65vh !important;
+  overflow: hidden !important;
+  margin-left: -5vw !important;
+}
+
+app-zoompdf {
+  overflow: hidden !important;
+}

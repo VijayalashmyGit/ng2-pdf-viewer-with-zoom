@@ -1,0 +1,17 @@
+.outer_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+
+  .prev_btn, .nxt_btn {
+    font-size: 2vw;
+    z-index: 1;   
+  }
+}
+
+.back_btn {
+  position: absolute;
+  top: 1vw;
+  left: 1vw;
+}
