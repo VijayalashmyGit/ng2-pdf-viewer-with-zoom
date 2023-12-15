@@ -59,11 +59,11 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "VassaSpraket_TW:build:production"
+              "buildTarget": "VassaSpraket_TW:build:production"
             },
             "development": {
-              "browserTarget": "VassaSpraket_TW:build:development",
-              "proxyConfig": "proxy.conf.js"
+              "proxyConfig": "proxy.conf.js",
+              "buildTarget": "VassaSpraket_TW:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "VassaSpraket_TW:build"
+            "buildTarget": "VassaSpraket_TW:build"
           }
         },
         "test": {
