@@ -1,0 +1,12 @@
+[
+	{
+		"id": 1,
+		"chapterName": "Chapter 1",
+		"chapterNumber": 1
+	},
+	{
+		"id": 2,
+		"chapterName": "Chapter 2",
+		"chapterNumber": 2
+	}
+]
