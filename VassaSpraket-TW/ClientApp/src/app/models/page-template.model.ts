@@ -6,7 +6,7 @@ export class PageTemplateViewModel{
   rows: LabelCanvasPosViewModel[];
 }
 
-export class LabelCanvasPosViewModel {  
+export class LabelCanvasPosViewModel {
   id: number;
   pageNumber: number;
   labelCanvas_Top: string;
@@ -17,6 +17,6 @@ export class LabelCanvasPosViewModel {
   canvas_StartY: number;
   canvas_Width: number;
   canvas_Height: number;
-  scale: number; 
+  scale: number;
   pageTemplateId: number;
 }

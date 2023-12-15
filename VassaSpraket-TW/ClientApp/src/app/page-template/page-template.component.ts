@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { PageTemplateService } from './pagetemplate.service';
+import { PageTemplateService } from './page-template.service';
 import { ActivatedRoute } from '@angular/router';
 import { ApiResponse } from '../models/apiResponse';
-import { PageTemplateViewModel } from '../models/pagetemplate.model';
+import { PageTemplateViewModel } from '../models/page-template.model';
 
 @Component({
-  selector: 'app-pagetemplate',
-  templateUrl: './pagetemplate.component.html',
-  styleUrls: ['./pagetemplate.component.scss']
+  selector: 'app-page-template',
+  templateUrl: './page-template.component.html',
+  styleUrls: ['./page-template.component.scss']
 })
-export class PagetemplateComponent implements OnInit {
-  model: any;  
+export class PageTemplateComponent implements OnInit {
+  model: any;
   currentIndex: number = 1;
   totalPages: number = 0;
   filteredData: any = [];
@@ -21,7 +21,7 @@ export class PagetemplateComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       const id = params.get('id');
       this.pageTemplateService.getPageTemplateById(Number(id)).subscribe((data: ApiResponse<PageTemplateViewModel>) => {
-        this.model = data.payload;        
+        this.model = data.payload;
         this.loadHotspot();
       });
     });
@@ -41,7 +41,7 @@ export class PagetemplateComponent implements OnInit {
 
   updateTotalPages(totalPages: number) {
     this.totalPages = totalPages;
-   
+
   }
 
   updatebtn(isLoaded: boolean) {

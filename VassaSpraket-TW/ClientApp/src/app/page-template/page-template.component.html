@@ -3,11 +3,11 @@
   <button mat-fab matTooltip="Primary" color="primary" class="prev_btn" [hidden]="currentIndex === 1" (click)="loadPrevPage()">
     <
   </button>
-  <app-pdfviewer [model]="model" 
+  <app-pdf-viewer [model]="model"
                  [currentIndex]="currentIndex"
                  [filteredData]="filteredData"
                  (totalPagesLoaded)="updateTotalPages($event)"
-                 (btnLoaded)="updatebtn($event)"></app-pdfviewer>
+                 (btnLoaded)="updatebtn($event)"/>
 
   <button mat-fab matTooltip="Primary" color="primary" class="nxt_btn" [hidden]="(currentIndex == totalPages||!isNavBtnShow)" (click)="loadNxtPage()">
     >

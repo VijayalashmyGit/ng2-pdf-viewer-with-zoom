@@ -3,11 +3,11 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CanvasRenderService } from '../../services/canvasrender.service';
 
 @Component({
-  selector: 'app-zoompdf',
-  templateUrl: './zoompdf.component.html',
-  styleUrls: ['./zoompdf.component.scss']
+  selector: 'app-zoom-pdf',
+  templateUrl: './zoom-pdf.component.html',
+  styleUrls: ['./zoom-pdf.component.scss']
 })
-export class ZoompdfComponent implements AfterViewInit {
+export class ZoomPdfComponent implements AfterViewInit {
 
   @ViewChild('cropCanvas', { static: true }) cropCanvas: ElementRef;
 

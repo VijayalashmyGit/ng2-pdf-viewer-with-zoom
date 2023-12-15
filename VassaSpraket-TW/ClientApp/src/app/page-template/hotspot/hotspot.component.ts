@@ -1,7 +1,7 @@
 import { Component, Input, ElementRef, ViewChildren, QueryList } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CanvasRenderService } from '../../services/canvasrender.service';
-import { ZoompdfComponent } from '../zoompdf/zoompdf.component';
+import { ZoomPdfComponent } from '../zoom-pdf/zoom-pdf.component';
 
 
 @Component({
@@ -35,7 +35,7 @@ export class HotspotComponent {
   }
 
   openDialog(currentLabel: number): void {
-    this.dialog.open(ZoompdfComponent, {
+    this.dialog.open(ZoomPdfComponent, {
       maxWidth: '92vw',
       width: '100%',
       height: '87vh',

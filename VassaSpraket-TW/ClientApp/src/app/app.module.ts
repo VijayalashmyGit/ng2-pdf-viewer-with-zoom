@@ -13,23 +13,23 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-import { PagetemplateComponent } from './pagetemplate/pagetemplate.component';
+import { PageTemplateComponent } from './page-template/page-template.component';
 
 import { PdfViewerModule } from 'ng2-pdf-viewer';
-import { ZoompdfComponent } from './pagetemplate/zoompdf/zoompdf.component';
+import { ZoomPdfComponent } from './page-template/zoom-pdf/zoom-pdf.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { HotspotComponent } from './pagetemplate/hotspot/hotspot.component';
-import { PdfviewerComponent } from './pagetemplate/pdfviewer/pdfviewer.component';
+import { HotspotComponent } from './page-template/hotspot/hotspot.component';
+import { PdfViewerComponent } from './page-template/pdf-viewer/pdf-viewer.component';
 
 @NgModule({
   declarations: [
-    AppComponent,   
+    AppComponent,
     HomeComponent,
-    PagetemplateComponent,
-    PdfviewerComponent,
-    ZoompdfComponent,
+    PageTemplateComponent,
+    PdfViewerComponent,
+    ZoomPdfComponent,
     HotspotComponent
-    
+
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -42,12 +42,11 @@ import { PdfviewerComponent } from './pagetemplate/pdfviewer/pdfviewer.component
     MatIconModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'chapter/:id', component: PagetemplateComponent },
-    
+      { path: 'chapter/:id', component: PageTemplateComponent },
     ]),
     BrowserAnimationsModule
   ],
-  
+
   providers: [],
   bootstrap: [AppComponent]
 })

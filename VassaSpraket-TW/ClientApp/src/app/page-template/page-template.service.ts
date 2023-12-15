@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ApiResponse } from '../models/apiResponse';
-import { PageTemplateViewModel } from '../models/pagetemplate.model';
+import { PageTemplateViewModel } from '../models/page-template.model';
 import { environment } from '../../environments/environment';
 
 @Injectable({
