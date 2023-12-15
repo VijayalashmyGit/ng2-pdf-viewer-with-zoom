@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PageTemplateComponent } from './page-template/page-template.component';
 
 import { PdfViewerModule } from 'ng2-pdf-viewer';
@@ -37,6 +38,7 @@ import { PdfViewerComponent } from './page-template/pdf-viewer/pdf-viewer.compon
     FormsModule,
     MatButtonModule,
     MatCardModule,
+    MatProgressSpinnerModule,
     PdfViewerModule,
     MatDialogModule,
     MatIconModule,

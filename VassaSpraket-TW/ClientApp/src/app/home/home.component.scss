@@ -21,14 +21,14 @@
     align-items: center;
     justify-content: center;
     color: #FFFFFF;
-  }
 
-  .chapter_card:hover {
-    transform: scale(1.1);
-  }
+    &:hover {
+      transform: scale(1.1);
+    }
 
-  mat-card-title {
-    font-size: 2vw;
+    mat-card-title {
+      font-size: 2vw;
+    }
   }
 }
 

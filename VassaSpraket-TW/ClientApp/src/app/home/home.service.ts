@@ -15,7 +15,7 @@ export class HomeService {
 
   getAllChapters() {
 
-    return this.httpClient.get<ApiResponse<ChaptersViewModel>>(this.baseUrl + "Chapters/GetAllChapters");
+    return this.httpClient.get<ApiResponse<ChaptersViewModel[]>>(this.baseUrl + "Chapters/GetAllChapters");
   }
 
 }

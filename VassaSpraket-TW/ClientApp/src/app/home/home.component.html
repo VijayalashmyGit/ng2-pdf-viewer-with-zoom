@@ -2,10 +2,25 @@
 
 <div class="card-container">
 
-  <mat-card *ngFor="let chapter of chapters_model" class="chapter_card" [routerLink]="['chapter/', chapter.chapterNumber]">
+  @if(data(); as data) {
+    @switch (data.state) {
+      @case ('loading') {
+        <mat-progress-spinner mode="indeterminate"/>
+      }
+      @case ('loaded') {
+        <mat-card *ngFor="let chapter of data.chapters" class="chapter_card" [routerLink]="['chapter/', chapter.chapterNumber]">
 
-    <mat-card-title>{{ chapter.chapterName }}</mat-card-title>
+          <mat-card-title>{{ chapter.chapterName }}</mat-card-title>
 
-  </mat-card>
+        </mat-card>
+      }
+      @case ('error') {
+        <mat-progress-spinner mode="determinate" value="100" color="warn" />
+      }
+    }
+  }
+
+
+
 
 </div>
