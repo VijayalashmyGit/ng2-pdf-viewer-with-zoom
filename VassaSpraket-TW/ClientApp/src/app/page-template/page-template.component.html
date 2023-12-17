@@ -1,17 +1,15 @@
-
-<div class="outer_container" *ngIf="model">
-  <button mat-fab matTooltip="Primary" color="primary" class="prev_btn" [hidden]="currentIndex === 1" (click)="loadPrevPage()">
-    <
-  </button>
-  <app-pdf-viewer [model]="model"
-                 [currentIndex]="currentIndex"
-                 [filteredData]="filteredData"
-                 (totalPagesLoaded)="updateTotalPages($event)"
-                 (btnLoaded)="updatebtn($event)"/>
-
-  <button mat-fab matTooltip="Primary" color="primary" class="nxt_btn" [hidden]="(currentIndex == totalPages||!isNavBtnShow)" (click)="loadNxtPage()">
-    >
-  </button>
-</div>
+@if(model(); as model) {
+  @switch (model.state) {
+    @case ('loading') {
+      <mat-progress-spinner mode="indeterminate"/>
+    }
+    @case ('loaded') {
+      <app-pdf-viewer [model]="model.pageTemplate" />
+    }
+    @case ('error') {
+      <mat-progress-spinner mode="determinate" value="100" color="warn" />
+    }
+  }
+}
 
 <button mat-raised-button color="accent" class="back_btn" routerLink="/">Back</button>

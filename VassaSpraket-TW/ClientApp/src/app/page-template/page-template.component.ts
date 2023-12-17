@@ -1,57 +1,37 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { PageTemplateService } from './page-template.service';
 import { ActivatedRoute } from '@angular/router';
-import { ApiResponse } from '../models/apiResponse';
 import { PageTemplateViewModel } from '../models/page-template.model';
+import { catchError, map, of, switchMap } from 'rxjs';
+
+
+type State = {
+  state: 'loading';
+} | {
+  state: 'loaded';
+  pageTemplate: PageTemplateViewModel;
+} | {
+  state: 'error';
+  error: any;
+}
 
 @Component({
   selector: 'app-page-template',
   templateUrl: './page-template.component.html',
   styleUrls: ['./page-template.component.scss']
 })
-export class PageTemplateComponent implements OnInit {
-  model: any;
-  currentIndex: number = 1;
-  totalPages: number = 0;
-  filteredData: any = [];
-  isNavBtnShow: boolean;
-  constructor(private route: ActivatedRoute, private pageTemplateService: PageTemplateService) { }
-
-  ngOnInit() {
-    this.route.paramMap.subscribe(params => {
-      const id = params.get('id');
-      this.pageTemplateService.getPageTemplateById(Number(id)).subscribe((data: ApiResponse<PageTemplateViewModel>) => {
-        this.model = data.payload;
-        this.loadHotspot();
-      });
-    });
-
-  }
-
-  loadPrevPage() {
-    this.currentIndex--;
-    this.loadHotspot();
-  }
-
-  loadNxtPage() {
-    this.currentIndex++;
-    this.loadHotspot();
-
-  }
-
-  updateTotalPages(totalPages: number) {
-    this.totalPages = totalPages;
-
-  }
-
-  updatebtn(isLoaded: boolean) {
-    this.isNavBtnShow = isLoaded;
-  }
-
-  // filter the label, canvas position based on the pagenumber
-  loadHotspot() {
-    this.filteredData = this.model.rows.filter((item: { pageNumber: number; }) => item.pageNumber === this.currentIndex);
-
-  }
-
+export class PageTemplateComponent {
+  private readonly pageTemplateService = inject(PageTemplateService);
+  readonly model = toSignal(inject(ActivatedRoute).paramMap.pipe(
+    switchMap(params => this.pageTemplateService.getPageTemplateById(Number(params.get('id')))),
+    map((result): State => {
+      if (result.success) {
+        return { state: 'loaded', pageTemplate: result.payload };
+      } else {
+        throw result.errorMessage;
+      }
+    }),
+    catchError(error => of<State>({ state: 'error', error })),
+  ), { initialValue: { state: 'loading' } as State});
 }
