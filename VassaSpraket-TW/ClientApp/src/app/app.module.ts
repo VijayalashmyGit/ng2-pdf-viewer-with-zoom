@@ -44,7 +44,7 @@ import { PdfviewerComponent } from './pagetemplate/pdfviewer/pdfviewer.component
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'chapter/:id', component: PagetemplateComponent },
     
-    ]),
+    ], { bindToComponentInputs: true }),
     BrowserAnimationsModule
   ],
   
