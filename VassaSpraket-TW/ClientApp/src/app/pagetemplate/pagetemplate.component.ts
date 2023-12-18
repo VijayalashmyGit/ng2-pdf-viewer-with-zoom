@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PageTemplateService } from './pagetemplate.service';
-import { ActivatedRoute } from '@angular/router';
 import { ApiResponse } from '../models/apiResponse';
 import { PageTemplateViewModel } from '../models/pagetemplate.model';
+import { Input } from '@angular/core';
 
 @Component({
   selector: 'app-pagetemplate',
@@ -15,16 +15,16 @@ export class PagetemplateComponent implements OnInit {
   totalPages: number = 0;
   filteredData: any = [];
   isNavBtnShow: boolean;
-  constructor(private route: ActivatedRoute, private pageTemplateService: PageTemplateService) { }
+  @Input() id = '';
+
+  constructor(private pageTemplateService: PageTemplateService) { }
 
   ngOnInit() {
-    this.route.paramMap.subscribe(params => {
-      const id = params.get('id');
-      this.pageTemplateService.getPageTemplateById(Number(id)).subscribe((data: ApiResponse<PageTemplateViewModel>) => {
+    
+      this.pageTemplateService.getPageTemplateById(Number(this.id)).subscribe((data: ApiResponse<PageTemplateViewModel>) => {
         this.model = data.payload;        
         this.loadHotspot();
-      });
-    });
+      }); 
 
   }
 
