@@ -11,7 +11,9 @@ export class CanvasRenderService {
     let canvas = preCanvas.nativeElement;
     let context = canvas.getContext('2d');
 
-    const factor = window.innerWidth <= currentData.canvas_Width ? 3 : 2;
+    var factor_calc: any = 1.9 + (0.003 * (953 - window.innerHeight));
+    const factor = Number(factor_calc.toFixed(1));
+
     let rectCoordinates = isHover ? {
       x: currentData.canvas_StartX / factor,
       y: currentData.canvas_StartY / factor,
